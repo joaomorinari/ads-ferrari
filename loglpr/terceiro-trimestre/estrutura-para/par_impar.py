@@ -5,11 +5,7 @@ for i in range(qtd):
 
     if n == 0:
         print("NULO")
-    elif n % 2 == 0 and n > 0:
-        print("PAR POSITIVO")
-    elif n % 2 == 0 and n < 0:
-        print("PAR NEGATIVO")
-    elif n % 2 != 0 and n > 0:
-        print("IMPAR POSITIVO")
     else:
-        print("IMPAR NEGATIVO")
+        status = "PAR" if n % 2 == 0 else "IMPAR"
+        sinal = "POSITIVO" if n > 0 else "NEGATIVO"
+        print(f"{status} {sinal}")

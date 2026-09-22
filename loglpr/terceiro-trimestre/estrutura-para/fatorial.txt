@@ -1,0 +1,33 @@
+PROGRAMA: fatorial.
+
+============================== CÓDIGO ===============================
+
+n = int(input("Digite o valor de N: "))
+
+fatorial = 1
+for i in range(2, n + 1):
+    fatorial *= i
+
+print(f"FATORIAL = {fatorial}")
+
+============================ TESTE NO TERMINAL =======================
+
+$ python3 fatorial.py
+Digite o valor de N: 4
+FATORIAL = 24
+$ python3 fatorial.py
+Digite o valor de N: 0
+FATORIAL = 1
+$ python3 fatorial.py
+Digite o valor de N: 6
+FATORIAL = 720
+$ python3 fatorial.py
+Digite o valor de N: 1
+FATORIAL = 1
+
+=============================== SAÍDA ================================
+
+FATORIAL = 24
+FATORIAL = 1
+FATORIAL = 720
+FATORIAL = 1

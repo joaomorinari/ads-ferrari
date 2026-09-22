@@ -1,0 +1,35 @@
+PROGRAMA: par_impar.
+
+============================== CÓDIGO ===============================
+
+qtd = int(input("Quantos numeros você vai digitar? "))
+
+for i in range(qtd):
+    n = int(input("Digite um numero: "))
+
+    if n == 0:
+        print("NULO")
+    else:
+        status = "PAR" if n % 2 == 0 else "IMPAR"
+        sinal = "POSITIVO" if n > 0 else "NEGATIVO"
+        print(f"{status} {sinal}")
+
+============================ TESTE NO TERMINAL =======================
+
+$ python3 par_impar.py
+Quantos numeros você vai digitar? 4
+Digite um numero: -5
+IMPAR NEGATIVO
+Digite um numero: 0
+NULO
+Digite um numero: 3
+IMPAR POSITIVO
+Digite um numero: -8
+PAR NEGATIVO
+
+=============================== SAÍDA ================================
+
+IMPAR NEGATIVO
+NULO
+IMPAR POSITIVO
+PAR NEGATIVO

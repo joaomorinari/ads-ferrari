@@ -1,0 +1,39 @@
+PROGRAMA: media_ponderada.
+
+============================== CÓDIGO ===============================
+
+n = int(input("Quantos casos voce vai digitar? "))
+
+for i in range(n):
+    print("Digite tres numeros:")
+    a = float(input())
+    b = float(input())
+    c = float(input())
+    media = (a * 2 + b * 3 + c * 5) / 10
+    print(f"MEDIA = {media:.1f}")
+
+============================ TESTE NO TERMINAL =======================
+
+$ python3 media_ponderada.py
+Quantos casos voce vai digitar? 3
+Digite tres numeros:
+6.5
+4.3
+6.2
+MEDIA = 5.7
+Digite tres numeros:
+5.1
+4.2
+8.1
+MEDIA = 6.3
+Digite tres numeros:
+8.0
+9.0
+10.0
+MEDIA = 9.3
+
+=============================== SAÍDA ================================
+
+MEDIA = 5.7
+MEDIA = 6.3
+MEDIA = 9.3

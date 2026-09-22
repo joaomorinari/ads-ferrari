@@ -1,0 +1,33 @@
+PROGRAMA: divisao.
+
+============================== CÓDIGO ===============================
+
+n = int(input("Quantos casos voce vai digitar? "))
+
+for i in range(n):
+    num = int(input("Entre com o numerador: "))
+    den = int(input("Entre com o denominador: "))
+    if den == 0:
+        print("DIVISAO IMPOSSIVEL")
+    else:
+        print(f"DIVISAO = {num / den:.2f}")
+
+============================ TESTE NO TERMINAL =======================
+
+$ python3 divisao.py
+Quantos casos voce vai digitar? 3
+Entre com o numerador: 3
+Entre com o denominador: -2
+DIVISAO = -1.50
+Entre com o numerador: -8
+Entre com o denominador: 0
+DIVISAO IMPOSSIVEL
+Entre com o numerador: 0
+Entre com o denominador: 8
+DIVISAO = 0.00
+
+=============================== SAÍDA ================================
+
+DIVISAO = -1.50
+DIVISAO IMPOSSIVEL
+DIVISAO = 0.00

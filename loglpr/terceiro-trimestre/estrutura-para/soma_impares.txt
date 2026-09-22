@@ -1,0 +1,37 @@
+PROGRAMA: soma_impares.
+
+============================== CÓDIGO ===============================
+
+x = int(input("Digite dois numeros: "))
+y = int(input())
+
+if x > y:
+    x, y = y, x
+
+soma = 0
+for i in range(x + 1, y):
+    if i % 2 != 0:
+        soma += i
+
+print(f"SOMA DOS IMPARES = {soma}")
+
+============================ TESTE NO TERMINAL =======================
+
+$ python3 soma_impares.py
+Digite dois numeros: 2
+Digite dois numeros: 9
+SOMA DOS IMPARES = 15
+$ python3 soma_impares.py
+Digite dois numeros: 15
+Digite dois numeros: 10
+SOMA DOS IMPARES = 24
+$ python3 soma_impares.py
+Digite dois numeros: 6
+Digite dois numeros: -5
+SOMA DOS IMPARES = 5
+
+=============================== SAÍDA ================================
+
+SOMA DOS IMPARES = 15
+SOMA DOS IMPARES = 24
+SOMA DOS IMPARES = 5

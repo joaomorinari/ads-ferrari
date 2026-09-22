@@ -1,0 +1,71 @@
+PROGRAMA: cobaias.
+
+============================== CÓDIGO ===============================
+
+n = int(input("Quantos casos de teste serao digitados? "))
+coelhos = 0
+ratos = 0
+sapos = 0
+
+for i in range(n):
+    qtd = int(input("Quantidade de cobaias: "))
+    tipo = input("Tipo de cobaia: ")
+    if tipo == "C":
+        coelhos += qtd
+    elif tipo == "R":
+        ratos += qtd
+    else:
+        sapos += qtd
+
+total = coelhos + ratos + sapos
+print("RELATORIO FINAL:")
+print(f"Total: {total} cobaias")
+print(f"Total de coelhos: {coelhos}")
+print(f"Total de ratos: {ratos}")
+print(f"Total de sapos: {sapos}")
+print(f"Percentual de coelhos: {coelhos * 100 / total:.2f}")
+print(f"Percentual de ratos: {ratos * 100 / total:.2f}")
+print(f"Percentual de sapos: {sapos * 100 / total:.2f}")
+
+============================ TESTE NO TERMINAL =======================
+
+$ python3 cobaias.py
+Quantos casos de teste serao digitados? 10
+Quantidade de cobaias: 10
+Tipo de cobaia: C
+Quantidade de cobaias: 6
+Tipo de cobaia: R
+Quantidade de cobaias: 15
+Tipo de cobaia: S
+Quantidade de cobaias: 5
+Tipo de cobaia: C
+Quantidade de cobaias: 14
+Tipo de cobaia: R
+Quantidade de cobaias: 9
+Tipo de cobaia: C
+Quantidade de cobaias: 6
+Tipo de cobaia: R
+Quantidade de cobaias: 8
+Tipo de cobaia: S
+Quantidade de cobaias: 5
+Tipo de cobaia: C
+Quantidade de cobaias: 14
+Tipo de cobaia: R
+RELATORIO FINAL:
+Total: 92 cobaias
+Total de coelhos: 29
+Total de ratos: 40
+Total de sapos: 23
+Percentual de coelhos: 31.52
+Percentual de ratos: 43.48
+Percentual de sapos: 25.00
+
+=============================== SAÍDA ================================
+
+Total: 92 cobaias
+Total de coelhos: 29
+Total de ratos: 40
+Total de sapos: 23
+Percentual de coelhos: 31.52
+Percentual de ratos: 43.48
+Percentual de sapos: 25.00

@@ -1,0 +1,32 @@
+PROGRAMA: dentro_fora.
+
+============================== CÓDIGO ===============================
+
+n = int(input("Quantos numeros voce vai digitar? "))
+dentro = 0
+
+for i in range(n):
+    x = int(input("Digite um numero: "))
+    if x >= 10 and x <= 20:
+        dentro += 1
+
+fora = n - dentro
+print(f"{dentro} DENTRO")
+print(f"{fora} FORA")
+
+============================ TESTE NO TERMINAL =======================
+
+$ python3 dentro_fora.py
+Quantos numeros voce vai digitar? 5
+Digite um numero: 14
+Digite um numero: 35
+Digite um numero: 10
+Digite um numero: 131
+Digite um numero: -2
+2 DENTRO
+3 FORA
+
+=============================== SAÍDA ================================
+
+2 DENTRO
+3 FORA
