@@ -1,0 +1,41 @@
+PROGRAMA: alturas.
+
+CÓDIGO:
+pessoas = []
+qtd = int(input("quantas pessoas vai digitar?"))
+for i in range(qtd):
+    print("Dados da {}ª pessoa:".format(i + 1))
+    n = (input("nome: "))
+    idade = int(input("idade: "))
+    altura = float(input("altura: "))
+    pessoas.append((n, idade, altura))
+
+media_altura = sum(p[2] for p in pessoas) / qtd
+print("Altura média: {:.2f}".format(media_altura))
+
+menores_16 = [p[0] for p in pessoas if p[1] < 16]
+porcentagem = (len(menores_16) / qtd) * 100
+
+print("\nPessoas com menos de 16 anos: {:.1f}%".format(porcentagem))
+for nome in menores_16:
+    print(f"- {nome}")
+
+TESTE NO TERMINAL:
+$ printf '5\nJoao\n15\n1.82\nMaria\n16\n1.60\nTeresa\n14\n1.58\nCarlos\n21\n1.65\nPaulo\n17\n1.78\n' | python3 alturas.py
+quantas pessoas vai digitar?Dados da 1ª pessoa:
+nome: idade: altura: Dados da 2ª pessoa:
+nome: idade: altura: Dados da 3ª pessoa:
+nome: idade: altura: Dados da 4ª pessoa:
+nome: idade: altura: Dados da 5ª pessoa:
+nome: idade: altura: Altura média: 1.69
+
+Pessoas com menos de 16 anos: 40.0%
+- Joao
+- Teresa
+
+SAÍDA:
+Altura média: 1.69
+
+Pessoas com menos de 16 anos: 40.0%
+- Joao
+- Teresa

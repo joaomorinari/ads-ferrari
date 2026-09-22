@@ -1,0 +1,58 @@
+PROGRAMA: comerciante.
+
+CÓDIGO:
+nomes = []
+compras = []
+vendas = []
+qtd = int(input("Serao digitados dados de quantos produtos? "))
+for i in range(qtd):
+    print("Produto {}:".format(i + 1))
+    n = input("Nome: ")
+    preco_compra = float(input("Preco de compra: "))
+    preco_venda = float(input("Preco de venda: "))
+    nomes.append(n)
+    compras.append(preco_compra)
+    vendas.append(preco_venda)
+
+lucro_baixo = 0
+lucro_medio = 0
+lucro_alto = 0
+for i in range(qtd):
+    lucro = (vendas[i] - compras[i]) / compras[i] * 100
+    if lucro < 10:
+        lucro_baixo += 1
+    elif lucro <= 20:
+        lucro_medio += 1
+    else:
+        lucro_alto += 1
+
+print("RELATORIO:")
+print("Lucro abaixo de 10%: {}".format(lucro_baixo))
+print("Lucro entre 10% e 20%: {}".format(lucro_medio))
+print("Lucro acima de 20%: {}".format(lucro_alto))
+print("Valor total de compra: {:.2f}".format(sum(compras)))
+print("Valor total de venda: {:.2f}".format(sum(vendas)))
+print("Lucro total: {:.2f}".format(sum(vendas) - sum(compras)))
+
+TESTE NO TERMINAL:
+$ printf '4\nFeijao\n10.00\n11.00\nArroz\n12.00\n12.80\nOleo\n5.00\n5.70\nSal\n3.00\n4.00\n' | python3 comerciante.py
+Serao digitados dados de quantos produtos? Produto 1:
+Nome: Preco de compra: Preco de venda: Produto 2:
+Nome: Preco de compra: Preco de venda: Produto 3:
+Nome: Preco de compra: Preco de venda: Produto 4:
+Nome: Preco de compra: Preco de venda: RELATORIO:
+Lucro abaixo de 10%: 1
+Lucro entre 10% e 20%: 2
+Lucro acima de 20%: 1
+Valor total de compra: 30.00
+Valor total de venda: 33.50
+Lucro total: 3.50
+
+SAÍDA:
+RELATORIO:
+Lucro abaixo de 10%: 1
+Lucro entre 10% e 20%: 2
+Lucro acima de 20%: 1
+Valor total de compra: 30.00
+Valor total de venda: 33.50
+Lucro total: 3.50

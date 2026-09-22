@@ -1,0 +1,28 @@
+PROGRAMA: abaixo_da_media.
+
+CÓDIGO:
+vetor = []
+qtd = int(input("Quantos elementos vai ter o vetor? "))
+for i in range(qtd):
+    n = float(input("Digite um numero: "))
+    vetor.append(n)
+
+media = sum(vetor) / qtd
+print("MEDIA DO VETOR = {:.3f}".format(media))
+print("ELEMENTOS ABAIXO DA MEDIA:")
+for x in vetor:
+    if x < media:
+        print("{:.1f}".format(x))
+
+TESTE NO TERMINAL:
+$ printf '4\n10.0\n15.5\n13.2\n9.8\n' | python3 abaixo_da_media.py
+Quantos elementos vai ter o vetor? Digite um numero: Digite um numero: Digite um numero: Digite um numero: MEDIA DO VETOR = 12.125
+ELEMENTOS ABAIXO DA MEDIA:
+10.0
+9.8
+
+SAÍDA:
+MEDIA DO VETOR = 12.125
+ELEMENTOS ABAIXO DA MEDIA:
+10.0
+9.8

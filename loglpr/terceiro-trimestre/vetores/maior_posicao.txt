@@ -1,0 +1,22 @@
+PROGRAMA: maior_posicao.
+
+CÓDIGO:
+numeros = []
+qtd = int(input("Quanto numeros voce vai digitar? "))
+for i in range(qtd):
+    n = float(input("Digite um numero: "))
+    numeros.append(n)
+
+maior = max(numeros)
+pos = numeros.index(maior)
+print("MAIOR VALOR = {}".format(maior))
+print("POSICAO DO MAIOR VALOR = {}".format(pos))
+
+TESTE NO TERMINAL:
+$ printf '6\n8.0\n4.0\n10.0\n14.0\n13.0\n7.0\n' | python3 maior_posicao.py
+Quanto numeros voce vai digitar? Digite um numero: Digite um numero: Digite um numero: Digite um numero: Digite um numero: Digite um numero: MAIOR VALOR = 14.0
+POSICAO DO MAIOR VALOR = 3
+
+SAÍDA:
+MAIOR VALOR = 14.0
+POSICAO DO MAIOR VALOR = 3

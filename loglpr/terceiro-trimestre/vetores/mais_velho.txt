@@ -1,0 +1,28 @@
+PROGRAMA: mais_velho.
+
+CÓDIGO:
+nomes = []
+idades = []
+qtd = int(input("Quantas pessoas voce vai digitar? "))
+for i in range(qtd):
+    print("Dados da {}a pessoa:".format(i + 1))
+    n = input("Nome: ")
+    idade = int(input("Idade: "))
+    nomes.append(n)
+    idades.append(idade)
+
+maior_idade = max(idades)
+pos = idades.index(maior_idade)
+print("PESSOA MAIS VELHA: {}".format(nomes[pos]))
+
+TESTE NO TERMINAL:
+$ printf '5\nJoao\n16\nMaria\n21\nTeresa\n15\nCarlos\n23\nPaulo\n17\n' | python3 mais_velho.py
+Quantas pessoas voce vai digitar? Dados da 1a pessoa:
+Nome: Idade: Dados da 2a pessoa:
+Nome: Idade: Dados da 3a pessoa:
+Nome: Idade: Dados da 4a pessoa:
+Nome: Idade: Dados da 5a pessoa:
+Nome: Idade: PESSOA MAIS VELHA: Carlos
+
+SAÍDA:
+PESSOA MAIS VELHA: Carlos

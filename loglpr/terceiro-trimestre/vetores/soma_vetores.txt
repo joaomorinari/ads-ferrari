@@ -1,0 +1,43 @@
+PROGRAMA: soma_vetores.
+
+CÓDIGO:
+qtd = int(input("Quantos valores vai ter cada vetor? "))
+a = []
+b = []
+print("Digite os valores do vetor A:")
+for i in range(qtd):
+    n = int(input())
+    a.append(n)
+print("Digite os valores do vetor B:")
+for i in range(qtd):
+    n = int(input())
+    b.append(n)
+
+c = []
+for i in range(qtd):
+    c.append(a[i] + b[i])
+
+print("VETOR RESULTANTE:")
+for x in c:
+    print(x)
+
+TESTE NO TERMINAL:
+$ printf '6\n8\n2\n11\n14\n13\n20\n5\n10\n3\n1\n10\n7\n' | python3 soma_vetores.py
+Quantos valores vai ter cada vetor? Digite os valores do vetor A:
+Digite os valores do vetor B:
+VETOR RESULTANTE:
+13
+12
+14
+15
+23
+27
+
+SAÍDA:
+VETOR RESULTANTE:
+13
+12
+14
+15
+23
+27

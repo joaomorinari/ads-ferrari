@@ -1,0 +1,26 @@
+PROGRAMA: negativos.
+
+CÓDIGO:
+numeros = []
+qtd = int(input("quantos numeros vai digitar?"))
+for i in range(qtd):
+    n = int(input("digite um numero: "))
+    numeros.append(n)
+
+print("Numeros negativos: ")
+for numero in numeros:
+    if numero < 0:
+        print(numero)
+
+TESTE NO TERMINAL:
+$ printf '6\n8\n-2\n9\n10\n-3\n-7\n' | python3 negativos.py
+quantos numeros vai digitar?digite um numero: digite um numero: digite um numero: digite um numero: digite um numero: digite um numero: Numeros negativos: 
+-2
+-3
+-7
+
+SAÍDA:
+Numeros negativos: 
+-2
+-3
+-7

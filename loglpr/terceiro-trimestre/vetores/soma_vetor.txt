@@ -1,0 +1,26 @@
+PROGRAMA: soma_vetor.
+
+CÓDIGO:
+vetor = []
+qtd = int(input("Quantos numeros voce vai digitar? "))
+for i in range(qtd):
+    n = float(input("Digite um numero: "))
+    vetor.append(n)
+
+soma = sum(vetor)
+media = soma / qtd
+
+print("VALORES =", " ".join(str(x) for x in vetor))
+print("SOMA = {:.2f}".format(soma))
+print("MEDIA = {:.2f}".format(media))
+
+TESTE NO TERMINAL:
+$ printf '4\n8.0\n4.0\n10.0\n14.0\n' | python3 soma_vetor.py
+Quantos numeros voce vai digitar? Digite um numero: Digite um numero: Digite um numero: Digite um numero: VALORES = 8.0 4.0 10.0 14.0
+SOMA = 36.00
+MEDIA = 9.00
+
+SAÍDA:
+VALORES = 8.0 4.0 10.0 14.0
+SOMA = 36.00
+MEDIA = 9.00

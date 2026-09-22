@@ -1,0 +1,31 @@
+PROGRAMA: dados_pessoas.
+
+CÓDIGO:
+alturas = []
+generos = []
+qtd = int(input("Quantas pessoas serao digitadas? "))
+for i in range(qtd):
+    alt = float(input("Altura da {}a pessoa: ".format(i + 1)))
+    gen = input("Genero da {}a pessoa: ".format(i + 1))
+    alturas.append(alt)
+    generos.append(gen)
+
+alt_mulheres = [alturas[i] for i in range(qtd) if generos[i] == "F"]
+media_mulheres = sum(alt_mulheres) / len(alt_mulheres)
+print("Menor altura = {:.2f}".format(min(alturas)))
+print("Maior altura = {:.2f}".format(max(alturas)))
+print("Media das alturas das mulheres = {:.2f}".format(media_mulheres))
+print("Numero de homens = {}".format(generos.count("M")))
+
+TESTE NO TERMINAL:
+$ printf '5\n1.70\nF\n1.83\nM\n1.54\nM\n1.61\nF\n1.75\nF\n' | python3 dados_pessoas.py
+Quantas pessoas serao digitadas? Altura da 1a pessoa: Genero da 1a pessoa: Altura da 2a pessoa: Genero da 2a pessoa: Altura da 3a pessoa: Genero da 3a pessoa: Altura da 4a pessoa: Genero da 4a pessoa: Altura da 5a pessoa: Genero da 5a pessoa: Menor altura = 1.54
+Maior altura = 1.83
+Media das alturas das mulheres = 1.69
+Numero de homens = 2
+
+SAÍDA:
+Menor altura = 1.54
+Maior altura = 1.83
+Media das alturas das mulheres = 1.69
+Numero de homens = 2
