@@ -1,0 +1,115 @@
+================================================================
+               ATIVIDADE: SOMA DE CADA LINHA DA MATRIZ
+               Arquivo: soma_linhas.py
+================================================================
+
+OBJETIVO
+----------------------------------------------------------------
+Ler uma matriz de M linhas e N colunas com números reais,
+calcular a soma dos elementos de cada linha e guardar cada
+resultado em um vetor, que é mostrado ao final.
+
+FUNCIONAMENTO GERAL
+----------------------------------------------------------------
+1. O usuário informa a quantidade de linhas (M) e colunas (N).
+2. A cada linha, o programa pede os elementos e calcula a soma.
+3. As somas são guardadas no vetor.
+4. Ao final, o programa imprime "VETOR GERADO:" e cada soma.
+
+----------------------------------------------------------------
+                          CÓDIGO
+----------------------------------------------------------------
+
+qtd_linhas = int(input("Digite a quantidade de linhas: "))
+qtd_colunas = int(input("Digite a quantidade de colunas: "))
+
+matriz = []
+vetor = []
+
+for x in range(1, qtd_linhas + 1):
+    linha = []
+
+    print(f"Digite os elementos da {x}ª linha:")
+
+    for y in range(1, qtd_colunas + 1):
+        elemento = float(input())
+        linha.append(elemento)
+
+    matriz.append(linha)
+
+for linha in matriz:
+    soma = 0
+
+    for elemento in linha:
+        soma += elemento
+
+    vetor.append(soma)
+
+print("VETOR GERADO:")
+
+for soma in vetor:
+    print(soma)
+
+----------------------------------------------------------------
+                          TESTES
+----------------------------------------------------------------
+
+==============================================================
+TESTE 1 - Exemplo do professor (2 linhas x 3 colunas)
+==============================================================
+Este teste usa exatamente os mesmos números do exemplo do
+exercício "soma linhas" (Projeto 05 - Matrizes).
+
+Entrada do usuário:            Significado:
+----------------------------------------------------------------
+2                             quantidade de linhas
+3                             quantidade de colunas
+7.0                           elemento da 1ª linha
+8.0                           elemento da 1ª linha
+10.0                          elemento da 1ª linha
+2.0                           elemento da 2ª linha
+3.0                           elemento da 2ª linha
+5.0                           elemento da 2ª linha
+
+Matriz formada:
+     7.0   8.0  10.0
+     2.0   3.0   5.0
+
+Soma de cada linha:            Resultado impresso:
+    linha 1: 7.0 + 8.0 + 10.0 = 25.0   ->  25.0
+    linha 2: 2.0 + 3.0 + 5.0 = 10.0    ->  10.0
+
+SAÍDA GERADA PELO PROGRAMA:
+    VETOR GERADO:
+    25.0
+    10.0
+
+==============================================================
+TESTE 2 - Matriz 3 linhas x 2 colunas
+==============================================================
+Entrada do usuário:             Significado:
+----------------------------------------------------------------
+3                              quantidade de linhas
+2                              quantidade de colunas
+1.5                            elemento da 1ª linha
+2.5                            elemento da 1ª linha
+3.5                            elemento da 2ª linha
+4.5                            elemento da 2ª linha
+5.5                            elemento da 3ª linha
+6.5                            elemento da 3ª linha
+
+Matriz formada:
+     1.5   2.5
+     3.5   4.5
+     5.5   6.5
+
+Soma de cada linha:             Resultado impresso:
+    linha 1: 1.5 + 2.5 = 4.0    ->  4.0
+    linha 2: 3.5 + 4.5 = 8.0    ->  8.0
+    linha 3: 5.5 + 6.5 = 12.0   ->  12.0
+
+SAÍDA GERADA PELO PROGRAMA:
+    VETOR GERADO:
+    4.0
+    8.0
+    12.0

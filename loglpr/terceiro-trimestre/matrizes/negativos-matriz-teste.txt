@@ -1,0 +1,98 @@
+================================================================
+               ATIVIDADE: NÚMEROS NEGATIVOS DA MATRIZ
+               Arquivo: negativos_ matriz.py
+================================================================
+
+OBJETIVO
+----------------------------------------------------------------
+Ler uma matriz de N linhas e M colunas com números inteiros e
+mostrar na tela somente os valores negativos da matriz.
+
+FUNCIONAMENTO GERAL
+----------------------------------------------------------------
+1. O usuário informa a quantidade de linhas (N) e colunas (M).
+2. O programa lê um elemento por vez (índices começando em 0).
+3. Percorre toda a matriz verificando cada valor.
+4. Todo valor menor que zero é impresso (um por linha).
+
+----------------------------------------------------------------
+                          CÓDIGO
+----------------------------------------------------------------
+
+n = int(input("Qual o N de linhas da matriz ? "))
+m = int(input("Qual o N de colunas da matriz? "))
+matriz = []
+
+for i in range(n):
+    linha = []
+
+    for j in range(m):
+        elemento = int(input(f"Elemento [{i}, {j}]: "))
+        linha.append(elemento)
+
+    matriz.append(linha)
+
+print("NUMEROS NEGATIVOS:")
+
+for i in range(n):
+    for j in range(m):
+        if matriz[i][j] < 0:
+            print(matriz[i][j])
+
+----------------------------------------------------------------
+                          TESTES
+----------------------------------------------------------------
+
+==============================================================
+TESTE 1 - Exemplo do professor (2 linhas x 3 colunas)
+==============================================================
+Este teste usa exatamente os mesmos números do exemplo do
+exercício "negativos matriz" (Projeto 05 - Matrizes).
+
+Entrada do usuário:            Significado:
+----------------------------------------------------------------
+2                             quantidade de linhas
+3                             quantidade de colunas
+12                            elemento [0,0]
+-8                            elemento [0,1]
+5                             elemento [0,2]
+-13                           elemento [1,0]
+10                            elemento [1,1]
+-6                            elemento [1,2]
+
+Matriz formada:
+     12   -8    5
+    -13   10   -6
+
+Valores negativos:
+    [0,1] = -8    [1,0] = -13    [1,2] = -6
+
+SAÍDA GERADA PELO PROGRAMA:
+    NUMEROS NEGATIVOS:
+    -8
+    -13
+    -6
+
+==============================================================
+TESTE 2 - Matriz 2 linhas x 2 colunas
+==============================================================
+Entrada do usuário:            Significado:
+----------------------------------------------------------------
+2                             quantidade de linhas
+2                             quantidade de colunas
+-1                            elemento [0,0]
+2                             elemento [0,1]
+3                             elemento [1,0]
+-4                            elemento [1,1]
+
+Matriz formada:
+     -1    2
+      3   -4
+
+Valores negativos:
+    [0,0] = -1    [1,1] = -4
+
+SAÍDA GERADA PELO PROGRAMA:
+    NUMEROS NEGATIVOS:
+    -1
+    -4

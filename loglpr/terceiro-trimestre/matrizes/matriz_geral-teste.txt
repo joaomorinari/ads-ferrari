@@ -1,0 +1,151 @@
+================================================================
+                 ATIVIDADE: MATRIZ GERAL
+                 Arquivo: matriz_geral.py
+================================================================
+
+OBJETIVO
+----------------------------------------------------------------
+Trabalhar com uma matriz quadrada de ordem N com números reais,
+executando estas ações:
+a) somar e imprimir os elementos positivos;
+b) ler o índice de uma linha e imprimir seus elementos;
+c) ler o índice de uma coluna e imprimir seus elementos;
+d) imprimir a diagonal principal;
+e) elevar ao quadrado os elementos negativos e imprimir a matriz
+   alterada.
+
+FUNCIONAMENTO GERAL
+----------------------------------------------------------------
+1. O usuário informa a ordem (N) da matriz e digita os elementos.
+2. Percorre a matriz somando os valores positivos (maiores que 0).
+3. Lê o índice de uma linha e mostra os elementos dela.
+4. Lê o índice de uma coluna e mostra os elementos dela.
+5. Mostra a diagonal principal (linha == coluna).
+6. Percorre a matriz: todo elemento negativo é elevado ao
+   quadrado (valor ** 2). Depois mostra a matriz alterada.
+
+----------------------------------------------------------------
+                          CÓDIGO
+----------------------------------------------------------------
+
+n = int(input("Qual a ordem da matriz? "))
+
+matriz = []
+
+for i in range(n):
+    linha = []
+
+    for j in range(n):
+        elemento = float(input(f"Elemento [{i}, {j}]: "))
+        linha.append(elemento)
+
+    matriz.append(linha)
+
+soma_positivos = 0
+
+for i in range(n):
+    for j in range(n):
+        if matriz[i][j] > 0:
+            soma_positivos += matriz[i][j]
+
+print(f"SOMA DOS POSITIVOS: {soma_positivos}")
+
+linha_escolhida = int(input("Escolha uma linha: "))
+
+print("LINHA ESCOLHIDA:")
+
+for j in range(n):
+    print(matriz[linha_escolhida][j])
+
+coluna_escolhida = int(input("Escolha uma coluna: "))
+
+print("COLUNA ESCOLHIDA:")
+
+for i in range(n):
+    print(matriz[i][coluna_escolhida])
+
+print("DIAGONAL PRINCIPAL:")
+
+for i in range(n):
+    print(matriz[i][i])
+
+for i in range(n):
+    for j in range(n):
+        if matriz[i][j] < 0:
+            matriz[i][j] = matriz[i][j] ** 2
+
+print("MATRIZ ALTERADA:")
+
+for i in range(n):
+    for j in range(n):
+        print(matriz[i][j])
+
+----------------------------------------------------------------
+                          TESTES
+----------------------------------------------------------------
+
+==============================================================
+TESTE 1 - Exemplo do professor (matriz 3x3)
+==============================================================
+Este teste usa exatamente os mesmos números do exemplo do
+exercício "matriz geral" (Projeto 05 - Matrizes).
+
+Entrada do usuário:             Significado:
+----------------------------------------------------------------
+3                              ordem da matriz
+7.0                            elemento [0,0]
+-8.0                           elemento [0,1]
+18.0                           elemento [0,2]
+-2.0                           elemento [1,0]
+3.0                            elemento [1,1]
+5.0                            elemento [1,2]
+11.0                           elemento [2,0]
+-15.0                          elemento [2,1]
+4.0                            elemento [2,2]
+1                              linha escolhida
+2                              coluna escolhida
+
+Matriz formada:
+      7.0  -8.0  18.0
+     -2.0   3.0   5.0
+     11.0 -15.0   4.0
+
+a) Soma dos positivos:
+   7.0 + 18.0 + 3.0 + 5.0 + 11.0 + 4.0 = 48.0
+
+b) Linha escolhida = 1  ->  elementos [1,0] [1,1] [1,2]
+   -2.0  3.0  5.0
+
+c) Coluna escolhida = 2  ->  elementos [0,2] [1,2] [2,2]
+   18.0  5.0  4.0
+
+d) Diagonal principal (linha == coluna):
+   [0,0] = 7.0    [1,1] = 3.0    [2,2] = 4.0
+
+e) Negativos elevados ao quadrado:
+   -8.0 -> 64.0   -2.0 -> 4.0   -15.0 -> 225.0
+
+SAÍDA GERADA PELO PROGRAMA:
+    SOMA DOS POSITIVOS: 48.0
+    Escolha uma linha: LINHA ESCOLHIDA:
+    -2.0
+    3.0
+    5.0
+    Escolha uma coluna: COLUNA ESCOLHIDA:
+    18.0
+    5.0
+    4.0
+    DIAGONAL PRINCIPAL:
+    7.0
+    3.0
+    4.0
+    MATRIZ ALTERADA:
+    7.0
+    64.0
+    18.0
+    4.0
+    3.0
+    5.0
+    11.0
+    225.0
+    4.0

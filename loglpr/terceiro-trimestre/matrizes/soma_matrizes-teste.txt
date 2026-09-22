@@ -1,0 +1,115 @@
+================================================================
+               ATIVIDADE: SOMA DE DUAS MATRIZES (A + B)
+               Arquivo: soma_matrizes.py
+================================================================
+
+OBJETIVO
+----------------------------------------------------------------
+Ler duas matrizes A e B (mesma quantidade de linhas e colunas),
+somar cada elemento correspondente e gerar a matriz C. Ao final,
+mostrar a matriz C.
+
+FUNCIONAMENTO GERAL
+----------------------------------------------------------------
+1. O usuário informa a quantidade de linhas e colunas das matrizes.
+2. O programa lê os elementos da matriz A (índices começando em 0).
+3. O programa lê os elementos da matriz B.
+4. Para cada posição, C[i][j] recebe A[i][j] + B[i][j].
+5. Ao final, imprime "MATRIZ SOMA:" e todos os elementos de C.
+
+----------------------------------------------------------------
+                          CÓDIGO
+----------------------------------------------------------------
+
+qtd_linhas = int(input("Quantas linhas vai ter cada matriz? "))
+qtd_colunas = int(input("Quantas colunas vai ter cada matriz? "))
+
+matrizA = []
+matrizB = []
+
+print("Digite os valores da matriz A:")
+
+for i in range(qtd_linhas):
+    linha = []
+
+    for j in range(qtd_colunas):
+        elemento = int(input(f"Elemento [{i}, {j}]: "))
+        linha.append(elemento)
+
+    matrizA.append(linha)
+
+print("Digite os valores da matriz B:")
+
+for i in range(qtd_linhas):
+    linha = []
+
+    for j in range(qtd_colunas):
+        elemento = int(input(f"Elemento [{i}, {j}]: "))
+        linha.append(elemento)
+
+    matrizB.append(linha)
+
+matrizC = []
+
+for i in range(qtd_linhas):
+    linhaC = []
+
+    for j in range(qtd_colunas):
+        soma = matrizA[i][j] + matrizB[i][j]
+        linhaC.append(soma)
+
+    matrizC.append(linhaC)
+
+print("MATRIZ SOMA:")
+
+for i in range(qtd_linhas):
+    for j in range(qtd_colunas):
+        print(matrizC[i][j])
+
+----------------------------------------------------------------
+                          TESTES
+----------------------------------------------------------------
+
+==============================================================
+TESTE 1 - Exemplo do professor (2 linhas x 3 colunas)
+==============================================================
+Este teste usa exatamente os mesmos números do exemplo do
+exercício "soma matrizes" (Projeto 05 - Matrizes).
+
+Entrada do usuário:            Significado:
+----------------------------------------------------------------
+2                             quantidade de linhas
+3                             quantidade de colunas
+
+Digite os valores da matriz A:
+3                            elemento A[0,0]
+5                            elemento A[0,1]
+2                            elemento A[0,2]
+4                            elemento A[1,0]
+5                            elemento A[1,1]
+1                            elemento A[1,2]
+
+Digite os valores da matriz B:
+2                            elemento B[0,0]
+4                            elemento B[0,1]
+5                            elemento B[0,2]
+1                            elemento B[1,0]
+8                            elemento B[1,1]
+8                            elemento B[1,2]
+
+Matriz A:                    Matriz B:
+     3   5   2                    2   4   5
+     4   5   1                    1   8   8
+
+Soma C[i][j] = A[i][j] + B[i][j]:
+    [0,0]: 3 + 2 = 5     [0,1]: 5 + 4 = 9      [0,2]: 2 + 5 = 7
+    [1,0]: 4 + 1 = 5     [1,1]: 5 + 8 = 13     [1,2]: 1 + 8 = 9
+
+SAÍDA GERADA PELO PROGRAMA:
+    MATRIZ SOMA:
+    5
+    9
+    7
+    5
+    13
+    9
