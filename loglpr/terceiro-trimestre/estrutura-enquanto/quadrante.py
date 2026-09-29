@@ -1,4 +1,4 @@
-condicao = True
+#condicao = True
 
 while condicao:
     valor_x= int(input("Digite o valor da coordenada X: "))
