@@ -1,4 +1,5 @@
 n = int(input("Quantos casos de teste serao digitados? "))
+#inicializaçao de variaveis 
 coelhos = 0
 ratos = 0
 sapos = 0
